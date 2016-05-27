@@ -23,7 +23,8 @@
 	<property name="clisp" value="${basedir}/lisp" />
 	<property name="launch4j.dir" location="${libdir}/build-only/launch4j" />
 	<property name="java.library.path" value="${java.library.path};${swtdir}" />
-	<!-- revision property is set in the call to svnversion -->
+	<property name="revision" value="1-mh" />
+	<!-- revision property was set in the call to svnversion, does not work with git anymore -->
 
 	<!-- Classpath: setup once, used everywhere. -->
 	<path id="classpath">
@@ -157,11 +158,11 @@
 			</and>
 		</condition>
 
-		<exec executable="${svnversion}" vmlauncher="true" resolveexecutable="true" outputproperty="revision">
+		<!-- exec executable="${svnversion}" vmlauncher="true" resolveexecutable="true" outputproperty="revision">
 			<arg file="${basedir}" />
 		</exec>
 
-		<echo message="${revision}" />
+		<echo message="${revision}" /-->
 
 		<replace file="${distdir}/CogTool.app/Contents/Info.plist" token="DISTJARSTR" value="${distjarstr}" />
 		<replace file="${distdir}/CogTool.app/Contents/Info.plist" token="VERSION" value="${version}" />
