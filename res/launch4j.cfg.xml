@@ -14,7 +14,7 @@
     <maxVersion></maxVersion>
     <initialHeapSize>32</initialHeapSize>
     <maxHeapSize>512</maxHeapSize>
-    <args>-Djava.library.path=&quot;&quot;./lib&quot;&quot; -Dcogtool.version=&quot;&quot;VERSION&quot;&quot; -Dcogtool.revision=&quot;&quot;REVISION&quot;&quot; -Dcogtool.build=&quot;&quot;BUILDTIME&quot;&quot; -Xmx400000000</args>
+    <args>-Djava.library.path=&quot;&quot;./lib&quot;&quot; -Dcogtool.version=&quot;&quot;VERSION&quot;&quot; -Dcogtool.revision=&quot;&quot;Unversioned directory&quot;&quot; -Dcogtool.build=&quot;&quot;05/27/2016-01:48&quot;&quot; -Xmx400000000</args>
     <opt>-D32</opt>
   </jre>
   <splash>

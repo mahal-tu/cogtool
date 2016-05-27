@@ -137,6 +137,7 @@ public class ResearchDialog extends WindowUtil.SimpleDialog
     private Button systemWaitVisionOnlyCheckbox;
     private Button enableComputeScriptsCheckbox; 
     private Button generateThinksOnImportCheckbox;
+    private Button displayBasedDifferenceReductionCheckbox;
     private Button enableTracingCheckbox;
     private Button useEMMACheckbox;
     private Combo actrDebugLevelCombo;
@@ -239,6 +240,11 @@ public class ResearchDialog extends WindowUtil.SimpleDialog
         generateThinksOnImportCheckbox.setText(L10N.get("PREFDG.GENSTEPS",
                                                           "Generate implied Thinks on Import from XML"));
         generateThinksOnImportCheckbox.setSelection(CogToolPref.GENERATE_THINKS_ON_IMPORT.getBoolean());
+		
+		displayBasedDifferenceReductionCheckbox= new Button(dialog, SWT.CHECK);
+        displayBasedDifferenceReductionCheckbox.setText(L10N.get("PREFDG.DBDR",
+                                                          "Display-Based Difference-Reduction mode"));
+        displayBasedDifferenceReductionCheckbox.setSelection(CogToolPref.DBDR.getBoolean());
         
         enableTracingCheckbox = new Button(dialog, SWT.CHECK);
         enableTracingCheckbox.setText(L10N.get("PREFDG.TRACE",
@@ -475,6 +481,11 @@ public class ResearchDialog extends WindowUtil.SimpleDialog
         fd = new FormData(); 
         fd.top = new FormAttachment(generateThinksOnImportCheckbox, 15);
         fd.left = new FormAttachment(generateThinksOnImportCheckbox, 0, SWT.LEFT);
+        displayBasedDifferenceReductionCheckbox.setLayoutData(fd);
+
+        fd = new FormData(); 
+        fd.top = new FormAttachment(displayBasedDifferenceReductionCheckbox, 15);
+        fd.left = new FormAttachment(displayBasedDifferenceReductionCheckbox, 0, SWT.LEFT);
         enableTracingCheckbox.setLayoutData(fd);
         
         fd = new FormData();
@@ -669,6 +680,7 @@ public class ResearchDialog extends WindowUtil.SimpleDialog
         systemWaitVisionOnlyCheckbox.setEnabled(resrch);
         enableComputeScriptsCheckbox.setEnabled(resrch);
         generateThinksOnImportCheckbox.setEnabled(resrch);
+		displayBasedDifferenceReductionCheckbox.setEnabled(resrch);
         enableTracingCheckbox.setEnabled(resrch);
         useEMMACheckbox.setEnabled(resrch);
         actrDebugLevelCombo.setEnabled(resrch);
@@ -706,6 +718,9 @@ public class ResearchDialog extends WindowUtil.SimpleDialog
         }
         if (CogToolPref.GENERATE_THINKS_ON_IMPORT.setBoolean(generateThinksOnImportCheckbox.getSelection())) {
             changed.add(CogToolPref.GENERATE_THINKS_ON_IMPORT);
+        }
+        if (CogToolPref.DBDR.setBoolean(displayBasedDifferenceReductionCheckbox.getSelection())) {
+            changed.add(CogToolPref.DBDR);
         }
         if (CogToolPref.IS_TRACING.setBoolean(enableTracingCheckbox.getSelection())) {
             changed.add(CogToolPref.IS_TRACING);
@@ -772,6 +787,7 @@ public class ResearchDialog extends WindowUtil.SimpleDialog
         systemWaitVisionOnlyCheckbox.setSelection(CogToolPref.SYSWVO.getBooleanDefault());
         enableComputeScriptsCheckbox.setSelection(CogToolPref.COMPSCR.getBooleanDefault());
         generateThinksOnImportCheckbox.setSelection(CogToolPref.GENERATE_THINKS_ON_IMPORT.getBooleanDefault());
+        displayBasedDifferenceReductionCheckbox.setSelection(CogToolPref.DBDR.getBooleanDefault());
         enableTracingCheckbox.setSelection(CogToolPref.IS_TRACING.getBooleanDefault());
         useEMMACheckbox.setSelection(CogToolPref.USE_EMMA.getBooleanDefault());
         actrDebugLevelCombo.select(CogToolPref.ACTR_DEBUG_LEVEL.getIntDefault());

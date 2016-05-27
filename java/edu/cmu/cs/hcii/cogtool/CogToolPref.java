@@ -125,6 +125,7 @@ public enum CogToolPref {
     CTE_SUPPRESS_NOISE("CogTool.CTESuppressNoise", Kind.BOOLEAN, false),
     CTE_DEFAULT_BACK_LABEL("CogTool.CTEDefaultBackLabel", Kind.STRING, L10N.get("PREFS.defaultBackLabel", "Back")),
     GENERATE_THINKS_ON_IMPORT("CogTool.KLMGenerateOnImport", Kind.BOOLEAN, true),
+    DBDR("CogTool.KLMDBDR", Kind.BOOLEAN, false),
     ACTR_ALTERNATIVE_PARAMETERS("CogTool.AlternativeParameters", Kind.BOOLEAN, false),
     VISUAL_ATTENTION("CogTool.VisualAttention", Kind.INT, 85),
     MOTOR_INITIATION("CogTool.MotorInitiation", Kind.INT, 50),
